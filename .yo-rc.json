@@ -1,0 +1,21 @@
+{
+  "generator-ui5-ts-app": {
+    "namespace": "ui5training",
+    "framework": "SAPUI5",
+    "frameworkVersion": "1.120.4",
+    "author": "AlexVlad",
+    "initrepo": true,
+    "tstypes": "@sapui5/types",
+    "tstypesVersion": "1.120.4",
+    "appId": "ui5training",
+    "appURI": "ui5training",
+    "cdnDomain": "ui5.sap.com",
+    "defaultTheme": "sap_horizon",
+    "gte1_98_0": true,
+    "gte1_104_0": true,
+    "gte1_115_0": true,
+    "gte1_120_0": true,
+    "lt1_124_0": true,
+    "setupCompleted": true
+  }
+}

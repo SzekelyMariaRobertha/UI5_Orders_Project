@@ -1,0 +1,96 @@
+{
+  "d": {
+    "results": [
+      {
+        "EmployeeID": 1,
+        "LastName": "Dubois",
+        "FirstName": "Nancy",
+        "Title": "Sales Representative",
+        "HireDate": "/Date(864432000000)/",
+        "City": "Seattle",
+        "Country": "USA"
+      },
+      {
+        "EmployeeID": 2,
+        "LastName": "Smith",
+        "FirstName": "Andrew",
+        "Title": "Vice President, Sales",
+        "HireDate": "/Date(927158400000)/",
+        "City": "Tacoma",
+        "Country": "USA"
+      },
+      {
+        "EmployeeID": 3,
+        "LastName": "Meier",
+        "FirstName": "Janet",
+        "Title": "Sales Representative",
+        "HireDate": "/Date(938304000000)/",
+        "City": "New York",
+        "Country": "USA"
+      },
+      {
+        "EmployeeID": 4,
+        "LastName": "Meier",
+        "FirstName": "Steven",
+        "Title": "Sales Representative",
+        "HireDate": "/Date(847670400000)/",
+        "City": "Chicago",
+        "Country": "USA"
+      },
+      {
+        "EmployeeID": 5,
+        "LastName": "Müller",
+        "FirstName": "Margaret",
+        "Title": "Sales Representative",
+        "HireDate": "/Date(994032000000)/",
+        "City": "Tacoma",
+        "Country": "USA"
+      },
+      {
+        "EmployeeID": 6,
+        "LastName": "Smith",
+        "FirstName": "Laura",
+        "Title": "Sales Representative",
+        "HireDate": "/Date(904953600000)/",
+        "City": "New York",
+        "Country": "USA"
+      },
+      {
+        "EmployeeID": 7,
+        "LastName": "García",
+        "FirstName": "Carlos",
+        "Title": "Sales Representative",
+        "HireDate": "/Date(898300800000)/",
+        "City": "Seattle",
+        "Country": "USA"
+      },
+      {
+        "EmployeeID": 8,
+        "LastName": "Smith",
+        "FirstName": "Anne",
+        "Title": "Sales Representative",
+        "HireDate": "/Date(916704000000)/",
+        "City": "Seattle",
+        "Country": "USA"
+      },
+      {
+        "EmployeeID": 9,
+        "LastName": "Anders",
+        "FirstName": "Marco",
+        "Title": "Sales Representative",
+        "HireDate": "/Date(885859200000)/",
+        "City": "Los Angeles",
+        "Country": "USA"
+      },
+      {
+        "EmployeeID": 10,
+        "LastName": "Ivanova",
+        "FirstName": "Klaus",
+        "Title": "Sales Representative",
+        "HireDate": "/Date(911001600000)/",
+        "City": "Chicago",
+        "Country": "USA"
+      }
+    ]
+  }
+}

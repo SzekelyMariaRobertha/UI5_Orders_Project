@@ -1,0 +1,226 @@
+{
+  "d": {
+    "results": [
+      {
+        "CustomerID": "CUST001",
+        "CompanyName": "Meier & Co.",
+        "ContactName": "Klaus Meier",
+        "ContactTitle": "Owner",
+        "Address": "427 Meier Street",
+        "City": "Lyon",
+        "PostalCode": "51220",
+        "Country": "France",
+        "Phone": "(+33) 555-1001"
+      },
+      {
+        "CustomerID": "CUST002",
+        "CompanyName": "García & Co.",
+        "ContactName": "Klaus García",
+        "ContactTitle": "Sales Representative",
+        "Address": "913 García Street",
+        "City": "Naples",
+        "PostalCode": "40776",
+        "Country": "Italy",
+        "Phone": "(+39) 555-1002"
+      },
+      {
+        "CustomerID": "CUST003",
+        "CompanyName": "Anders & Co.",
+        "ContactName": "Andrei Anders",
+        "ContactTitle": "Owner",
+        "Address": "987 Anders Street",
+        "City": "Hamburg",
+        "PostalCode": "71664",
+        "Country": "Germany",
+        "Phone": "(+49) 555-1003"
+      },
+      {
+        "CustomerID": "CUST004",
+        "CompanyName": "Smith & Co.",
+        "ContactName": "Olga Smith",
+        "ContactTitle": "Sales Representative",
+        "Address": "925 Smith Street",
+        "City": "Bristol",
+        "PostalCode": "37141",
+        "Country": "UK",
+        "Phone": "(+44) 555-1004"
+      },
+      {
+        "CustomerID": "CUST005",
+        "CompanyName": "Rossi & Co.",
+        "ContactName": "Klaus Rossi",
+        "ContactTitle": "Owner",
+        "Address": "95 Rossi Street",
+        "City": "Paris",
+        "PostalCode": "77490",
+        "Country": "France",
+        "Phone": "(+33) 555-1005"
+      },
+      {
+        "CustomerID": "CUST006",
+        "CompanyName": "Smith & Co.",
+        "ContactName": "Yuki Smith",
+        "ContactTitle": "Sales Representative",
+        "Address": "526 Smith Street",
+        "City": "Bristol",
+        "PostalCode": "54066",
+        "Country": "UK",
+        "Phone": "(+44) 555-1006"
+      },
+      {
+        "CustomerID": "CUST007",
+        "CompanyName": "Anders & Co.",
+        "ContactName": "Laura Anders",
+        "ContactTitle": "Owner",
+        "Address": "307 Anders Street",
+        "City": "Montreal",
+        "PostalCode": "88421",
+        "Country": "Canada",
+        "Phone": "(+1) 555-1007"
+      },
+      {
+        "CustomerID": "CUST008",
+        "CompanyName": "Smith & Co.",
+        "ContactName": "Laura Smith",
+        "ContactTitle": "Sales Representative",
+        "Address": "195 Smith Street",
+        "City": "Manchester",
+        "PostalCode": "50971",
+        "Country": "UK",
+        "Phone": "(+44) 555-1008"
+      },
+      {
+        "CustomerID": "CUST009",
+        "CompanyName": "García & Co.",
+        "ContactName": "Andrei García",
+        "ContactTitle": "Owner",
+        "Address": "656 García Street",
+        "City": "Iasi",
+        "PostalCode": "16439",
+        "Country": "Romania",
+        "Phone": "(+40) 555-1009"
+      },
+      {
+        "CustomerID": "CUST010",
+        "CompanyName": "Meier & Co.",
+        "ContactName": "Carlos Meier",
+        "ContactTitle": "Sales Representative",
+        "Address": "268 Meier Street",
+        "City": "New York",
+        "PostalCode": "52431",
+        "Country": "USA",
+        "Phone": "(+1) 555-1010"
+      },
+      {
+        "CustomerID": "CUST011",
+        "CompanyName": "García & Co.",
+        "ContactName": "Maria García",
+        "ContactTitle": "Owner",
+        "Address": "806 García Street",
+        "City": "Bucharest",
+        "PostalCode": "77217",
+        "Country": "Romania",
+        "Phone": "(+40) 555-1011"
+      },
+      {
+        "CustomerID": "CUST012",
+        "CompanyName": "Ivanova & Co.",
+        "ContactName": "Maria Ivanova",
+        "ContactTitle": "Sales Representative",
+        "Address": "402 Ivanova Street",
+        "City": "Paris",
+        "PostalCode": "41453",
+        "Country": "France",
+        "Phone": "(+33) 555-1012"
+      },
+      {
+        "CustomerID": "CUST013",
+        "CompanyName": "Rossi & Co.",
+        "ContactName": "Andrei Rossi",
+        "ContactTitle": "Owner",
+        "Address": "967 Rossi Street",
+        "City": "New York",
+        "PostalCode": "88378",
+        "Country": "USA",
+        "Phone": "(+1) 555-1013"
+      },
+      {
+        "CustomerID": "CUST014",
+        "CompanyName": "García & Co.",
+        "ContactName": "Yuki García",
+        "ContactTitle": "Sales Representative",
+        "Address": "414 García Street",
+        "City": "Milan",
+        "PostalCode": "55843",
+        "Country": "Italy",
+        "Phone": "(+39) 555-1014"
+      },
+      {
+        "CustomerID": "CUST015",
+        "CompanyName": "Smith & Co.",
+        "ContactName": "Yuki Smith",
+        "ContactTitle": "Owner",
+        "Address": "11 Smith Street",
+        "City": "Osaka",
+        "PostalCode": "79912",
+        "Country": "Japan",
+        "Phone": "(+81) 555-1015"
+      },
+      {
+        "CustomerID": "CUST016",
+        "CompanyName": "Tanaka & Co.",
+        "ContactName": "Carlos Tanaka",
+        "ContactTitle": "Sales Representative",
+        "Address": "107 Tanaka Street",
+        "City": "Manchester",
+        "PostalCode": "12756",
+        "Country": "UK",
+        "Phone": "(+44) 555-1016"
+      },
+      {
+        "CustomerID": "CUST017",
+        "CompanyName": "Smith & Co.",
+        "ContactName": "Olga Smith",
+        "ContactTitle": "Owner",
+        "Address": "747 Smith Street",
+        "City": "Tokyo",
+        "PostalCode": "77598",
+        "Country": "Japan",
+        "Phone": "(+81) 555-1017"
+      },
+      {
+        "CustomerID": "CUST018",
+        "CompanyName": "Smith & Co.",
+        "ContactName": "Olga Smith",
+        "ContactTitle": "Sales Representative",
+        "Address": "722 Smith Street",
+        "City": "London",
+        "PostalCode": "23510",
+        "Country": "UK",
+        "Phone": "(+44) 555-1018"
+      },
+      {
+        "CustomerID": "CUST019",
+        "CompanyName": "Tanaka & Co.",
+        "ContactName": "Andrei Tanaka",
+        "ContactTitle": "Owner",
+        "Address": "668 Tanaka Street",
+        "City": "New York",
+        "PostalCode": "66932",
+        "Country": "USA",
+        "Phone": "(+1) 555-1019"
+      },
+      {
+        "CustomerID": "CUST020",
+        "CompanyName": "Ionescu & Co.",
+        "ContactName": "Klaus Ionescu",
+        "ContactTitle": "Sales Representative",
+        "Address": "545 Ionescu Street",
+        "City": "Cluj",
+        "PostalCode": "67949",
+        "Country": "Romania",
+        "Phone": "(+40) 555-1020"
+      }
+    ]
+  }
+}
