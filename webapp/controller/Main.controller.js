@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "./BaseController"], function (require, exports, BaseController_1) {
+define(["require", "exports", "./BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator"], function (require, exports, BaseController_1, Filter_1, FilterOperator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
@@ -26,6 +26,30 @@ define(["require", "exports", "./BaseController"], function (require, exports, B
         }
         Main.prototype.onInit = function () {
             console.log("Main controller initialized");
+            // Retrieve models from the manifest
+            var oOrderModel = this.getOwnerComponent().getModel("order");
+            var oCustomerModel = this.getOwnerComponent().getModel("customer");
+            // Set models to the view (this will bind them to the XML view automatically)
+            this.getView().setModel(oOrderModel, "order");
+            this.getView().setModel(oCustomerModel, "customer");
+        };
+        Main.prototype.onSearch = function (oEvent) {
+            var sQuery = oEvent.getSource().getValue();
+            var aFilters = [];
+            if (sQuery && sQuery.length > 0) {
+                aFilters.push(new Filter_1.default("CustomerID", FilterOperator_1.default.Contains, sQuery));
+            }
+            var oTable = this.byId("idOrdersTable");
+            var oBinding = oTable.getBinding("items");
+            oBinding.filter(aFilters, "Application");
+        };
+        Main.prototype.onSelectionChange = function (oEvent) {
+            var oTable = this.byId("idOrdersTable");
+            var oLabel = this.byId("idFilterLabel");
+            var aContexts = oTable.getSelectedContexts(true); // include contexts even they are not showed
+            var bSelected = aContexts && aContexts.length > 0;
+            var sText = bSelected ? "".concat(aContexts.length, " selected") : "";
+            oLabel.setText(sText);
         };
         return Main;
     }(BaseController_1.default));

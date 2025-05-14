@@ -1,0 +1,8 @@
+.customPageTitle .sapMTitle {
+	text-align: center !important; /* Ensure the text is centered */
+	font-size: 24px !important; /* Make the title larger */
+	font-weight: bold !important; /* Make the title bold */
+	width: 100% !important; /* Ensure the title takes up the full width */
+	display: block !important; /* Make it block-level element */
+	margin: 0 auto !important; /* Center it horizontally */
+}

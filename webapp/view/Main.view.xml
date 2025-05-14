@@ -1,6 +1,68 @@
-<mvc:View controllerName="ui5training.controller.Main"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+<mvc:View
+    controllerName="ui5training.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="idPage"
+        title="{i18n>appTitle}"
+        class="customPageTitle">
+        <subHeader>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <SearchField
+                    liveChange=".onSearch"
+                    width="20%" />
+                <Button
+                    text="{i18n>createButtonText}"
+                    icon="sap-icon://create"
+                    press="onCreatePress"
+                />
+                <Button
+                    text="{i18n>deleteButtonText}"
+                    icon="sap-icon://delete"
+                    press="onDeletePress"
+                />
+            </OverflowToolbar>
+        </subHeader>
+
+        <Table
+            id="idOrdersTable"
+            class="sapUiResponsiveMargin"
+            width="auto"
+            inset="false"
+            mode="MultiSelect"
+            items="{order>/d/results}">
+
+            <columns>
+                <Column>
+                    <Text text="Order ID" />
+                </Column>
+                <Column>
+                    <Text text="Order Date" />
+                </Column>
+                <Column>
+                    <Text text="Customer ID" />
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{order>OrderID}" />
+                        <Text
+                            text="{
+                                path: 'order>OrderDate', 	
+                                type: 'sap.ui.model.type.DateTime', 
+                                formatOptions: {
+                                pattern: 'HH:mm'
+				            }}" />
+                        <!-- <Text binding='{customer}' text="{customer>CompanyName}" /> -->
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
     </Page>
 </mvc:View>

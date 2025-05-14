@@ -39,7 +39,8 @@
 			"minUI5Version": "1.120.4",
 			"libs": {
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.m": {},
+				"sap.ui.layout": {}
 			}
 		},
 		"handleValidation": true,
@@ -60,16 +61,25 @@
 					"async": true
 				}
 			},
+			"order": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/mockdata/Orders.json"
+			},
+			"customer": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/mockdata/Customers.json"
+			},
 			"": {
-			  "dataSource": "mainService",
-			  "settings": {}
+				"dataSource": "mainService",
+				"settings": {}
 			}
 		},
 		"routing": {
 			"config": {
 				"routerClass": "sap.m.routing.Router",
+				"type": "View",
 				"viewType": "XML",
-				"viewPath": "ui5training.view",
+				"path": "ui5training.view",
 				"controlId": "app",
 				"controlAggregation": "pages"
 			},
@@ -86,6 +96,13 @@
 					"viewName": "Main"
 				}
 			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		}
 	}
 }
