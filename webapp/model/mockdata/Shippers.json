@@ -8,10 +8,5 @@
     "ShipperID": 2,
     "CompanyName": "Shipper 2",
     "Phone": "555-0702"
-  },
-  {
-    "ShipperID": 3,
-    "CompanyName": "Shipper 3",
-    "Phone": "555-0703"
   }
 ]

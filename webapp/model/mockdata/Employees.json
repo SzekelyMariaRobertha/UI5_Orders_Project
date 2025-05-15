@@ -1,32 +1,14 @@
 [
   {
     "EmployeeID": 1,
-    "FirstName": "Emp1",
-    "LastName": "Last1",
-    "Title": "Sales Rep"
+    "FirstName": "Alice",
+    "LastName": "Johnson",
+    "Title": "Sales Representative"
   },
   {
     "EmployeeID": 2,
-    "FirstName": "Emp2",
-    "LastName": "Last2",
-    "Title": "Sales Rep"
-  },
-  {
-    "EmployeeID": 3,
-    "FirstName": "Emp3",
-    "LastName": "Last3",
-    "Title": "Sales Rep"
-  },
-  {
-    "EmployeeID": 4,
-    "FirstName": "Emp4",
-    "LastName": "Last4",
-    "Title": "Sales Rep"
-  },
-  {
-    "EmployeeID": 5,
-    "FirstName": "Emp5",
-    "LastName": "Last5",
-    "Title": "Sales Rep"
+    "FirstName": "Michael",
+    "LastName": "Chen",
+    "Title": "Sales Manager"
   }
 ]

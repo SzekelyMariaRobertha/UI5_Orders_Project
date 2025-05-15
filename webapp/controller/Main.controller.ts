@@ -9,49 +9,49 @@ import FilterOperator from "sap/ui/model/FilterOperator";
 import ListBinding from "sap/ui/model/ListBinding";
 import ODataModel from "sap/ui/model/odata/v2/ODataModel";
 import BaseController from "./BaseController";
+import GroupHeaderListItem from "sap/m/GroupHeaderListItem";
 
 
 /**
  * @namespace ui5training.controller
  */
 export default class Main extends BaseController {
-	
-	public onInit(): void {
-		console.log("Main controller initialized");
-	}
 
-	public onSearch(oEvent: Event): void {
+    public onInit(): void {
+        console.log("Main controller initialized");
+    }
+
+    public onSearch(oEvent: Event): void {
         const sQuery = (oEvent.getSource() as SearchField).getValue();
         const oTable = this.byId("idOrdersTable") as Table;
         const oBinding = oTable.getBinding("items") as ListBinding;
- 
+
         let oMultiFilter: Filter = new Filter({
             filters: []
         })
-        
+
         // Since we have OrderID as number, we cannot filter on it
         // If we want to filter on it, we need to convert it to string in json file, but if we do that we wont be able to delete the entrie
         // Conclusion: we cannot filter on OrderID, we will filter on the other fields
         if (sQuery && sQuery.length > 0) {
-            oMultiFilter.aFilters.push(new Filter("Customer/CompanyName", FilterOperator.Contains, sQuery));
-
-            oMultiFilter.aFilters.push(new Filter("Freight", FilterOperator.Contains, sQuery));
-            oMultiFilter.aFilters.push(new Filter("Shipper/CompanyName", FilterOperator.Contains, sQuery));
-            oMultiFilter.aFilters.push(new Filter("ShipCity", FilterOperator.Contains, sQuery));
-            oMultiFilter.aFilters.push(new Filter("ShipCountry", FilterOperator.Contains, sQuery));
-            oMultiFilter.aFilters.push(new Filter("Employee/LastName", FilterOperator.Contains, sQuery));
-            oMultiFilter.aFilters.push(new Filter("Employee/FirstName", FilterOperator.Contains, sQuery));
+            // oMultiFilter.aFilters.push(new Filter("Customer/CompanyName", FilterOperator.Contains, sQuery));
+            // oMultiFilter.aFilters.push(new Filter("Freight", FilterOperator.Contains, sQuery));
+            // oMultiFilter.aFilters.push(new Filter("Shipper/CompanyName", FilterOperator.Contains, sQuery));
+            // oMultiFilter.aFilters.push(new Filter("ShipCity", FilterOperator.Contains, sQuery));
+            // oMultiFilter.aFilters.push(new Filter("ShipCountry", FilterOperator.Contains, sQuery));
+            // oMultiFilter.aFilters.push(new Filter("Employee/LastName", FilterOperator.Contains, sQuery));
+            // oMultiFilter.aFilters.push(new Filter("Employee/FirstName", FilterOperator.Contains, sQuery));
             oBinding.filter(oMultiFilter);
         } else {
             oBinding.filter([]);
         }
-	}
-		
-	public onCreatePress(oEvent: Event): void {
-		this.getRouter().navTo("create");
     }
-    
-	public onDeletePress() {
+
+    public onCreatePress(oEvent: Event): void {
+        this.getRouter().navTo("create");
+    }
+
+    public onDeletePress(): void {
         const oTable = this.byId("idOrdersTable") as Table;
         const oModel = this.getView().getModel() as ODataModel; // This is ODataModel!
         const aSelectedItems = oTable.getSelectedItems();
@@ -61,12 +61,12 @@ export default class Main extends BaseController {
         const sdeleteSuccessText = this.getResourceBundle().getText("deleteSuccessText");
         const sdeleteErrorText = this.getResourceBundle().getText("deleteErrorText");
 
- 
+
         if (aSelectedItems.length === 0) {
             MessageToast.show(sAtLeastOneEntryText);
             return;
         }
- 
+
         MessageBox.confirm(sdeleteConfirmationText, {
             title: sdeleteMessasgeBoxTitle,
             actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
@@ -75,35 +75,40 @@ export default class Main extends BaseController {
                 if (sAction === MessageBox.Action.OK) {
                     aSelectedItems.forEach(oItem => {
                         const oContext = oItem.getBindingContext();
-						let sPath = oContext.getPath();
-						oModel.setUseBatch(true);
-						// oModel.createKey("/Orders", {OrderID: a} )   #For creare, example for future
-						oModel.remove(sPath);
-					});
-					if (oModel.hasPendingChanges()) {
-						oModel.submitChanges({
-							success: (oData) => {
-                                MessageToast.show(sdeleteSuccessText);
-                            },
-                            error: (oResponse) => {
-                                MessageToast.show(sdeleteErrorText);
-                            }
-						})
-
-					}
+                        let sPath = oContext.getPath();
+                        oModel.setUseBatch(true);
+                        // oModel.createKey("/Orders", {OrderID: a} )   #For creare, example for future
+                        oModel.remove(sPath);
+                    });
+                    // if (oModel.hasPendingChanges()) {
+                    //     oModel.submitChanges({
+                    //         success: (oData) => {
+                    //             MessageToast.show(sdeleteSuccessText);
+                    //         },
+                    //         error: (oResponse) => {
+                    //             MessageToast.show(sdeleteErrorText);
+                    //         }
+                    //     })
+                    // }
                     oTable.removeSelections();
                     oModel.refresh();
                 }
-			}
+            }
         });
-	}
-	
-	public onOrderPress(oEvent: Event): void {
-		let oItem = (oEvent.getSource() as ColumnListItem).getBindingContext();
-		let oOrder = oItem.getObject();
-		let sID = oOrder.OrderID;
-		this.getRouter().navTo("details", {
-			ID: sID
-		});
-	}
+    }
+
+    public getGroupHeader = (oGroup: { key: string }): GroupHeaderListItem => {
+        return new GroupHeaderListItem({
+            title: oGroup.key
+        });
+    }
+
+    public onOrderPress(oEvent: Event): void {
+        let oItem = (oEvent.getSource() as ColumnListItem).getBindingContext();
+        let oOrder = oItem.getObject();
+        // let sID = oOrder.OrderID;
+        // this.getRouter().navTo("details", {
+        //     ID: sID
+        // });
+    }
 }

@@ -8,25 +8,25 @@
           "type": "NorthwindModel.Order"
         },
         "OrderID": 10248,
-        "CustomerID": "ALFKI",
+        "CustomerID": "GF001",
         "EmployeeID": 1,
-        "OrderDate": "/Date(836438400000)/",
-        "RequiredDate": "/Date(838857600000)/",
-        "ShippedDate": "/Date(837475200000)/",
-        "ShipVia": 1,
-        "Freight": "32.3800",
-        "ShipName": "Test ShipName",
-        "ShipAddress": "Test ShipAddress",
-        "ShipCity": "Test City",
-        "ShipRegion": null,
-        "ShipPostalCode": "12345",
-        "ShipCountry": "Testland",
+        "OrderDate": "/Date(1672444800000)/",
+        "RequiredDate": "/Date(1675036800000)/",
+        "ShippedDate": "/Date(1672704000000)/",
+        "ShipVia": "1",
+        "Freight": "42.50",
+        "ShipName": "Greenfield Solutions HQ",
+        "ShipAddress": "123 Elm Street",
+        "ShipCity": "Springfield",
+        "ShipRegion": "IL",
+        "ShipPostalCode": "62704",
+        "ShipCountry": "USA",
         "Customer": {
-          "CompanyName": "Alfreds Futterkiste"
+          "CompanyName": "Greenfield Solutions Ltd."
         },
         "Employee": {
-          "FirstName": "Nancy",
-          "LastName": "Davolio"
+          "FirstName": "Alice",
+          "LastName": "Johnson"
         },
         "Shipper": {
           "CompanyName": "Speedy Express"
@@ -44,25 +44,25 @@
           "type": "NorthwindModel.Order"
         },
         "OrderID": 10249,
-        "CustomerID": "ANATR",
+        "CustomerID": "BW002",
         "EmployeeID": 2,
-        "OrderDate": "/Date(836438400000)/",
-        "RequiredDate": "/Date(838857600000)/",
-        "ShippedDate": "/Date(837475200000)/",
-        "ShipVia": 2,
-        "Freight": "32.3800",
-        "ShipName": "Test ShipName",
-        "ShipAddress": "Test ShipAddress",
-        "ShipCity": "Test City",
-        "ShipRegion": null,
-        "ShipPostalCode": "12345",
-        "ShipCountry": "Testland",
+        "OrderDate": "/Date(1672617600000)/",
+        "RequiredDate": "/Date(1675209600000)/",
+        "ShippedDate": "/Date(1672790400000)/",
+        "ShipVia": "2",
+        "Freight": "30.75",
+        "ShipName": "BlueWave Technologies Main Office",
+        "ShipAddress": "456 Oak Avenue",
+        "ShipCity": "Seattle",
+        "ShipRegion": "WA",
+        "ShipPostalCode": "98101",
+        "ShipCountry": "USA",
         "Customer": {
-          "CompanyName": "Ana Trujillo Emparedados y helados"
+          "CompanyName": "BlueWave Technologies"
         },
         "Employee": {
-          "FirstName": "Andrew",
-          "LastName": "Fuller"
+          "FirstName": "Michael",
+          "LastName": "Chen"
         },
         "Shipper": {
           "CompanyName": "United Package"
@@ -80,25 +80,25 @@
           "type": "NorthwindModel.Order"
         },
         "OrderID": 10250,
-        "CustomerID": "ALFKI",
+        "CustomerID": "GF001",
         "EmployeeID": 1,
-        "OrderDate": "/Date(836438400000)/",
-        "RequiredDate": "/Date(838857600000)/",
-        "ShippedDate": "/Date(837475200000)/",
-        "ShipVia": 1,
-        "Freight": "32.3800",
-        "ShipName": "Test ShipName",
-        "ShipAddress": "Test ShipAddress",
-        "ShipCity": "Test City",
-        "ShipRegion": null,
-        "ShipPostalCode": "12345",
-        "ShipCountry": "Testland",
+        "OrderDate": "/Date(1672704000000)/",
+        "RequiredDate": "/Date(1675296000000)/",
+        "ShippedDate": "/Date(1673049600000)/",
+        "ShipVia": "1",
+        "Freight": "50.00",
+        "ShipName": "Greenfield Solutions HQ",
+        "ShipAddress": "123 Elm Street",
+        "ShipCity": "Springfield",
+        "ShipRegion": "IL",
+        "ShipPostalCode": "62704",
+        "ShipCountry": "USA",
         "Customer": {
-          "CompanyName": "Alfreds Futterkiste"
+          "CompanyName": "Greenfield Solutions Ltd."
         },
         "Employee": {
-          "FirstName": "Nancy",
-          "LastName": "Davolio"
+          "FirstName": "Alice",
+          "LastName": "Johnson"
         },
         "Shipper": {
           "CompanyName": "Speedy Express"
@@ -116,25 +116,25 @@
           "type": "NorthwindModel.Order"
         },
         "OrderID": 10251,
-        "CustomerID": "ANATR",
+        "CustomerID": "BW002",
         "EmployeeID": 2,
-        "OrderDate": "/Date(836438400000)/",
-        "RequiredDate": "/Date(838857600000)/",
-        "ShippedDate": "/Date(837475200000)/",
-        "ShipVia": 2,
-        "Freight": "32.3800",
-        "ShipName": "Test ShipName",
-        "ShipAddress": "Test ShipAddress",
-        "ShipCity": "Test City",
-        "ShipRegion": null,
-        "ShipPostalCode": "12345",
-        "ShipCountry": "Testland",
+        "OrderDate": "/Date(1672790400000)/",
+        "RequiredDate": "/Date(1675382400000)/",
+        "ShippedDate": "/Date(1673126400000)/",
+        "ShipVia": "2",
+        "Freight": "25.25",
+        "ShipName": "BlueWave Technologies Main Office",
+        "ShipAddress": "456 Oak Avenue",
+        "ShipCity": "Seattle",
+        "ShipRegion": "WA",
+        "ShipPostalCode": "98101",
+        "ShipCountry": "USA",
         "Customer": {
-          "CompanyName": "Ana Trujillo Emparedados y helados"
+          "CompanyName": "BlueWave Technologies"
         },
         "Employee": {
-          "FirstName": "Andrew",
-          "LastName": "Fuller"
+          "FirstName": "Michael",
+          "LastName": "Chen"
         },
         "Shipper": {
           "CompanyName": "United Package"
@@ -152,25 +152,25 @@
           "type": "NorthwindModel.Order"
         },
         "OrderID": 10252,
-        "CustomerID": "ALFKI",
+        "CustomerID": "GF001",
         "EmployeeID": 1,
-        "OrderDate": "/Date(836438400000)/",
-        "RequiredDate": "/Date(838857600000)/",
-        "ShippedDate": "/Date(837475200000)/",
-        "ShipVia": 1,
-        "Freight": "32.3800",
-        "ShipName": "Test ShipName",
-        "ShipAddress": "Test ShipAddress",
-        "ShipCity": "Test City",
-        "ShipRegion": null,
-        "ShipPostalCode": "12345",
-        "ShipCountry": "Testland",
+        "OrderDate": "/Date(1672876800000)/",
+        "RequiredDate": "/Date(1675468800000)/",
+        "ShippedDate": "/Date(1673212800000)/",
+        "ShipVia": "1",
+        "Freight": "45.00",
+        "ShipName": "Greenfield Solutions HQ",
+        "ShipAddress": "123 Elm Street",
+        "ShipCity": "Springfield",
+        "ShipRegion": "IL",
+        "ShipPostalCode": "62704",
+        "ShipCountry": "USA",
         "Customer": {
-          "CompanyName": "Alfreds Futterkiste"
+          "CompanyName": "Greenfield Solutions Ltd."
         },
         "Employee": {
-          "FirstName": "Nancy",
-          "LastName": "Davolio"
+          "FirstName": "Alice",
+          "LastName": "Johnson"
         },
         "Shipper": {
           "CompanyName": "Speedy Express"
@@ -188,25 +188,25 @@
           "type": "NorthwindModel.Order"
         },
         "OrderID": 10253,
-        "CustomerID": "ANATR",
+        "CustomerID": "BW002",
         "EmployeeID": 2,
-        "OrderDate": "/Date(836438400000)/",
-        "RequiredDate": "/Date(838857600000)/",
-        "ShippedDate": "/Date(837475200000)/",
-        "ShipVia": 2,
-        "Freight": "32.3800",
-        "ShipName": "Test ShipName",
-        "ShipAddress": "Test ShipAddress",
-        "ShipCity": "Test City",
-        "ShipRegion": null,
-        "ShipPostalCode": "12345",
-        "ShipCountry": "Testland",
+        "OrderDate": "/Date(1672963200000)/",
+        "RequiredDate": "/Date(1675555200000)/",
+        "ShippedDate": "/Date(1673299200000)/",
+        "ShipVia": "2",
+        "Freight": "28.90",
+        "ShipName": "BlueWave Technologies Main Office",
+        "ShipAddress": "456 Oak Avenue",
+        "ShipCity": "Seattle",
+        "ShipRegion": "WA",
+        "ShipPostalCode": "98101",
+        "ShipCountry": "USA",
         "Customer": {
-          "CompanyName": "Ana Trujillo Emparedados y helados"
+          "CompanyName": "BlueWave Technologies"
         },
         "Employee": {
-          "FirstName": "Andrew",
-          "LastName": "Fuller"
+          "FirstName": "Michael",
+          "LastName": "Chen"
         },
         "Shipper": {
           "CompanyName": "United Package"
@@ -224,25 +224,25 @@
           "type": "NorthwindModel.Order"
         },
         "OrderID": 10254,
-        "CustomerID": "ALFKI",
+        "CustomerID": "GF001",
         "EmployeeID": 1,
-        "OrderDate": "/Date(836438400000)/",
-        "RequiredDate": "/Date(838857600000)/",
-        "ShippedDate": "/Date(837475200000)/",
-        "ShipVia": 1,
-        "Freight": "32.3800",
-        "ShipName": "Test ShipName",
-        "ShipAddress": "Test ShipAddress",
-        "ShipCity": "Test City",
-        "ShipRegion": null,
-        "ShipPostalCode": "12345",
-        "ShipCountry": "Testland",
+        "OrderDate": "/Date(1673049600000)/",
+        "RequiredDate": "/Date(1675641600000)/",
+        "ShippedDate": "/Date(1673385600000)/",
+        "ShipVia": "1",
+        "Freight": "47.35",
+        "ShipName": "Greenfield Solutions HQ",
+        "ShipAddress": "123 Elm Street",
+        "ShipCity": "Springfield",
+        "ShipRegion": "IL",
+        "ShipPostalCode": "62704",
+        "ShipCountry": "USA",
         "Customer": {
-          "CompanyName": "Alfreds Futterkiste"
+          "CompanyName": "Greenfield Solutions Ltd."
         },
         "Employee": {
-          "FirstName": "Nancy",
-          "LastName": "Davolio"
+          "FirstName": "Alice",
+          "LastName": "Johnson"
         },
         "Shipper": {
           "CompanyName": "Speedy Express"
@@ -260,25 +260,25 @@
           "type": "NorthwindModel.Order"
         },
         "OrderID": 10255,
-        "CustomerID": "ANATR",
+        "CustomerID": "BW002",
         "EmployeeID": 2,
-        "OrderDate": "/Date(836438400000)/",
-        "RequiredDate": "/Date(838857600000)/",
-        "ShippedDate": "/Date(837475200000)/",
-        "ShipVia": 2,
-        "Freight": "32.3800",
-        "ShipName": "Test ShipName",
-        "ShipAddress": "Test ShipAddress",
-        "ShipCity": "Test City",
-        "ShipRegion": null,
-        "ShipPostalCode": "12345",
-        "ShipCountry": "Testland",
+        "OrderDate": "/Date(1673136000000)/",
+        "RequiredDate": "/Date(1675728000000)/",
+        "ShippedDate": "/Date(1673472000000)/",
+        "ShipVia": "2",
+        "Freight": "33.10",
+        "ShipName": "BlueWave Technologies Main Office",
+        "ShipAddress": "456 Oak Avenue",
+        "ShipCity": "Seattle",
+        "ShipRegion": "WA",
+        "ShipPostalCode": "98101",
+        "ShipCountry": "USA",
         "Customer": {
-          "CompanyName": "Ana Trujillo Emparedados y helados"
+          "CompanyName": "BlueWave Technologies"
         },
         "Employee": {
-          "FirstName": "Andrew",
-          "LastName": "Fuller"
+          "FirstName": "Michael",
+          "LastName": "Chen"
         },
         "Shipper": {
           "CompanyName": "United Package"
@@ -296,25 +296,25 @@
           "type": "NorthwindModel.Order"
         },
         "OrderID": 10256,
-        "CustomerID": "ALFKI",
+        "CustomerID": "GF001",
         "EmployeeID": 1,
-        "OrderDate": "/Date(836438400000)/",
-        "RequiredDate": "/Date(838857600000)/",
-        "ShippedDate": "/Date(837475200000)/",
-        "ShipVia": 1,
-        "Freight": "32.3800",
-        "ShipName": "Test ShipName",
-        "ShipAddress": "Test ShipAddress",
-        "ShipCity": "Test City",
-        "ShipRegion": null,
-        "ShipPostalCode": "12345",
-        "ShipCountry": "Testland",
+        "OrderDate": "/Date(1673222400000)/",
+        "RequiredDate": "/Date(1675814400000)/",
+        "ShippedDate": "/Date(1673558400000)/",
+        "ShipVia": "1",
+        "Freight": "49.20",
+        "ShipName": "Greenfield Solutions HQ",
+        "ShipAddress": "123 Elm Street",
+        "ShipCity": "Springfield",
+        "ShipRegion": "IL",
+        "ShipPostalCode": "62704",
+        "ShipCountry": "USA",
         "Customer": {
-          "CompanyName": "Alfreds Futterkiste"
+          "CompanyName": "Greenfield Solutions Ltd."
         },
         "Employee": {
-          "FirstName": "Nancy",
-          "LastName": "Davolio"
+          "FirstName": "Alice",
+          "LastName": "Johnson"
         },
         "Shipper": {
           "CompanyName": "Speedy Express"
@@ -322,42 +322,6 @@
         "Order_Details": {
           "__deferred": {
             "uri": "https://services.odata.org/V2/northwind/Northwind.svc/Orders(10256)/Order_Details"
-          }
-        }
-      },
-      {
-        "__metadata": {
-          "id": "https://services.odata.org/V2/northwind/Northwind.svc/Orders(10257)",
-          "uri": "https://services.odata.org/V2/northwind/Northwind.svc/Orders(10257)",
-          "type": "NorthwindModel.Order"
-        },
-        "OrderID": 10257,
-        "CustomerID": "ANATR",
-        "EmployeeID": 2,
-        "OrderDate": "/Date(836438400000)/",
-        "RequiredDate": "/Date(838857600000)/",
-        "ShippedDate": "/Date(837475200000)/",
-        "ShipVia": 2,
-        "Freight": "32.3800",
-        "ShipName": "Test ShipName",
-        "ShipAddress": "Test ShipAddress",
-        "ShipCity": "Test City",
-        "ShipRegion": null,
-        "ShipPostalCode": "12345",
-        "ShipCountry": "Testland",
-        "Customer": {
-          "CompanyName": "Ana Trujillo Emparedados y helados"
-        },
-        "Employee": {
-          "FirstName": "Andrew",
-          "LastName": "Fuller"
-        },
-        "Shipper": {
-          "CompanyName": "United Package"
-        },
-        "Order_Details": {
-          "__deferred": {
-            "uri": "https://services.odata.org/V2/northwind/Northwind.svc/Orders(10257)/Order_Details"
           }
         }
       }

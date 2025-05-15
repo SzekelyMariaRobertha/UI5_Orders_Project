@@ -1,27 +1,27 @@
 [
   {
     "CategoryID": 1,
-    "CategoryName": "Category 1",
-    "Description": "Description for category 1"
+    "CategoryName": "Household",
+    "Description": "Household and kitchen products"
   },
   {
     "CategoryID": 2,
-    "CategoryName": "Category 2",
-    "Description": "Description for category 2"
+    "CategoryName": "Kitchenware",
+    "Description": "Kitchen utensils and accessories"
   },
   {
     "CategoryID": 3,
-    "CategoryName": "Category 3",
-    "Description": "Description for category 3"
+    "CategoryName": "Electronics",
+    "Description": "Electronic devices and accessories"
   },
   {
     "CategoryID": 4,
-    "CategoryName": "Category 4",
-    "Description": "Description for category 4"
+    "CategoryName": "Furniture",
+    "Description": "Home and office furniture"
   },
   {
     "CategoryID": 5,
-    "CategoryName": "Category 5",
-    "Description": "Description for category 5"
+    "CategoryName": "Beverages",
+    "Description": "Natural and organic drinks"
   }
 ]

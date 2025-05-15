@@ -2,14 +2,15 @@
 	controllerName="ui5training.controller.CreateOrder"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:core="sap.ui.core">
+	xmlns:core="sap.ui.core"
+>
 
 	<NavContainer
 		id="idWizardNavContainer">
 		<pages>
 			<Page
 				id="idWizardContentPage"
-				title="{i18n>createOrderPageTitle}"
+				title=" {i18n>createOrderPageTitle}"
 				class="customPageTitle"
 				showNavButton="true"
 				navButtonPress=".onNavBack">
@@ -20,33 +21,111 @@
 						complete="wizardCompletedHandler">
 						<WizardStep
 							id="idSelectCustomerStep"
-							title="Select Customer">
+							title="{i18n>selectCustomerStepText}">
 							<VBox>
-								<Label text="Customer:" labelFor="idCustomerSelect" />
+								<Label
+									text="{i18n>comboboxCustomerLabelText}"
+									labelFor="idCustomerSelect" />
 								<ComboBox
 									id="idCustomerSelect"
 									items="{/Customers}"
 									showSecondaryValues="true"
 									change=".onCustomerSelected"
-									width="80%">
+									width="60%">
 									<core:ListItem
 										key="{CustomerID}"
-										text="{= ${CompanyName} + ' (' + ${City} + ', ' + ${Country} + ')' }"
-										additionalText="{= 'Contact: ' + ${ContactName} + ' | Phone: ' + ${Phone} }" />
+										text="{CompanyName} ({City}, {Country})"
+										additionalText="{ContactName}" />
 								</ComboBox>
+							</VBox>
+						</WizardStep>
+						<WizardStep
+							id="idSelectProductsStep"
+							title="{i18n>selectProductsStepText}">
+							<ScrollContainer height="35rem" horizontal="false" vertical="true">
+								<Table
+									id="idProductsTable"
+									class="sapUiResponsiveMargin"
+									width="auto"
+									sticky="ColumnHeaders,GroupHeaders"
+									alternateRowColors="true"
+									selectionChange=".onProductsSelected"
+									inset="false"
+									mode="MultiSelect"
+									items="{
+									path: '/Products',
+										sorter: {
+										path: 'Category/CategoryName',
+										group: true,
+										groupHeaderFactory: '.getGroupHeader'
+										}
+								  	}">
+									<columns>
+										<Column>
+											<Text text="{i18n>productNameText}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>categoryDescriptionText}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>supplierText}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>quantityPerUnitText}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>unitPriceText}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>unitsInStockText}" />
+										</Column>
+										<Column>
+											<Text text="{i18n>quantity}" />
+										</Column>
+									</columns>
+
+									<items>
+										<ColumnListItem
+											highlight="{= ${UnitsOnOrder} > ${UnitsInStock} ? 'Error' : 'Success' }">
+											<cells>
+												<Text text="{ProductName}" />
+												<Text text="{Category/Description}" />
+												<Text text="{Supplier/CompanyName}" />
+												<Text text="{QuantityPerUnit}" />
+												<Text text="{UnitPrice} $" />
+												<Text text="{UnitsInStock}" />
+												<Text text="{UnitsOnOrder}" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+
+							</ScrollContainer>
+						</WizardStep>
+						<WizardStep
+							id="idOrderOverviewStep"
+							title="{i18n>orderOverviewStepText}">
+							<VBox class="sapUiSmallMargin">
+
 							</VBox>
 						</WizardStep>
 					</Wizard>
 				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer />
+						<Button
+							id="idNextStepButton"
+							press='.onGoToOrderOverview'
+							type="Emphasized" />
+						<Button
+							id="idCancelButton"
+							text="{i18n>cancelButtonText}"
+							press='.onCancel'
+							type="Reject" />
+					</Toolbar>
+				</footer>
 			</Page>
 		</pages>
 	</NavContainer>
-
-
-	<!-- <Page
-		title="{i18n>createOrderPageTitle}"
-		class="customPageTitle"
-		showNavButton="true"
-		navButtonPress=".onNavBack">
-	</Page> -->
 </mvc:View>

@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "./BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/m/MessageBox", "sap/m/MessageToast"], function (require, exports, BaseController_1, Filter_1, FilterOperator_1, MessageBox_1, MessageToast_1) {
+define(["require", "exports", "sap/m/MessageBox", "sap/m/MessageToast", "sap/ui/model/Filter", "./BaseController", "sap/m/GroupHeaderListItem"], function (require, exports, MessageBox_1, MessageToast_1, Filter_1, BaseController_1, GroupHeaderListItem_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
@@ -22,59 +22,93 @@ define(["require", "exports", "./BaseController", "sap/ui/model/Filter", "sap/ui
     var Main = /** @class */ (function (_super) {
         __extends(Main, _super);
         function Main() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.getGroupHeader = function (oGroup) {
+                return new GroupHeaderListItem_1.default({
+                    title: oGroup.key
+                });
+            };
+            return _this;
         }
         Main.prototype.onInit = function () {
             console.log("Main controller initialized");
         };
         Main.prototype.onSearch = function (oEvent) {
             var sQuery = oEvent.getSource().getValue();
-            var aFilters = [];
-            if (sQuery && sQuery.length > 0) {
-                aFilters.push(new Filter_1.default("OrderID", FilterOperator_1.default.Contains, sQuery));
-            }
             var oTable = this.byId("idOrdersTable");
             var oBinding = oTable.getBinding("items");
-            console.log(oBinding.getModel().getProperty("/Orders"));
-            oBinding.filter(aFilters);
+            var oMultiFilter = new Filter_1.default({
+                filters: []
+            });
+            // Since we have OrderID as number, we cannot filter on it
+            // If we want to filter on it, we need to convert it to string in json file, but if we do that we wont be able to delete the entrie
+            // Conclusion: we cannot filter on OrderID, we will filter on the other fields
+            if (sQuery && sQuery.length > 0) {
+                // oMultiFilter.aFilters.push(new Filter("Customer/CompanyName", FilterOperator.Contains, sQuery));
+                // oMultiFilter.aFilters.push(new Filter("Freight", FilterOperator.Contains, sQuery));
+                // oMultiFilter.aFilters.push(new Filter("Shipper/CompanyName", FilterOperator.Contains, sQuery));
+                // oMultiFilter.aFilters.push(new Filter("ShipCity", FilterOperator.Contains, sQuery));
+                // oMultiFilter.aFilters.push(new Filter("ShipCountry", FilterOperator.Contains, sQuery));
+                // oMultiFilter.aFilters.push(new Filter("Employee/LastName", FilterOperator.Contains, sQuery));
+                // oMultiFilter.aFilters.push(new Filter("Employee/FirstName", FilterOperator.Contains, sQuery));
+                oBinding.filter(oMultiFilter);
+            }
+            else {
+                oBinding.filter([]);
+            }
         };
-        Main.prototype.onCreatePress = function () {
+        Main.prototype.onCreatePress = function (oEvent) {
             this.getRouter().navTo("create");
         };
         Main.prototype.onDeletePress = function () {
             var oTable = this.byId("idOrdersTable");
             var oModel = this.getView().getModel(); // This is ODataModel!
             var aSelectedItems = oTable.getSelectedItems();
+            var sAtLeastOneEntryText = this.getResourceBundle().getText("atLeastOneEntryText");
+            var sdeleteMessasgeBoxTitle = this.getResourceBundle().getText("deleteMessasgeBoxTitle");
+            var sdeleteConfirmationText = this.getResourceBundle().getText("deleteConfirmationText");
+            var sdeleteSuccessText = this.getResourceBundle().getText("deleteSuccessText");
+            var sdeleteErrorText = this.getResourceBundle().getText("deleteErrorText");
             if (aSelectedItems.length === 0) {
-                MessageToast_1.default.show("Please select at least one order.");
+                MessageToast_1.default.show(sAtLeastOneEntryText);
                 return;
             }
-            MessageBox_1.default.confirm("Are you sure you want to delete the selected orders?", {
-                title: "Confirm Deletion",
+            MessageBox_1.default.confirm(sdeleteConfirmationText, {
+                title: sdeleteMessasgeBoxTitle,
                 actions: [MessageBox_1.default.Action.OK, MessageBox_1.default.Action.CANCEL],
                 emphasizedAction: MessageBox_1.default.Action.OK,
                 onClose: function (sAction) {
                     if (sAction === MessageBox_1.default.Action.OK) {
                         aSelectedItems.forEach(function (oItem) {
                             var oContext = oItem.getBindingContext();
-                            var oOrder = oContext.getObject();
-                            var sOrderID = typeof oOrder.OrderID === "number"
-                                ? "/Orders(".concat(oOrder.OrderID, ")")
-                                : "/Orders('".concat(oOrder.OrderID, "')");
-                            oModel.remove(sOrderID, {
-                                success: function () {
-                                    MessageToast_1.default.show("Selected orders deleted.");
-                                },
-                                error: function () {
-                                    MessageToast_1.default.show("Delete failed for OrderID: " + oOrder.OrderID);
-                                }
-                            });
+                            var sPath = oContext.getPath();
+                            oModel.setUseBatch(true);
+                            // oModel.createKey("/Orders", {OrderID: a} )   #For creare, example for future
+                            oModel.remove(sPath);
                         });
+                        // if (oModel.hasPendingChanges()) {
+                        //     oModel.submitChanges({
+                        //         success: (oData) => {
+                        //             MessageToast.show(sdeleteSuccessText);
+                        //         },
+                        //         error: (oResponse) => {
+                        //             MessageToast.show(sdeleteErrorText);
+                        //         }
+                        //     })
+                        // }
                         oTable.removeSelections();
                         oModel.refresh();
                     }
                 }
             });
+        };
+        Main.prototype.onOrderPress = function (oEvent) {
+            var oItem = oEvent.getSource().getBindingContext();
+            var oOrder = oItem.getObject();
+            // let sID = oOrder.OrderID;
+            // this.getRouter().navTo("details", {
+            //     ID: sID
+            // });
         };
         return Main;
     }(BaseController_1.default));

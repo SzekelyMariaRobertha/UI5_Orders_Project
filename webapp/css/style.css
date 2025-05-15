@@ -23,3 +23,8 @@
 	background-color: #494c58 !important; /* dark blue-gray hover */
 	cursor: pointer;
 }
+
+.fixedHeightTable {
+	max-height: 5%; /* adjust depending on row height */
+	overflow-y: auto;
+}

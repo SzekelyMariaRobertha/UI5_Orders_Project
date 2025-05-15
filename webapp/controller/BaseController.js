@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "sap/ui/core/mvc/Controller", "sap/ui/core/UIComponent", "sap/ui/core/routing/History"], function (require, exports, Controller_1, UIComponent_1, History_1) {
+define(["require", "exports", "sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/ui/core/UIComponent"], function (require, exports, Controller_1, History_1, UIComponent_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
@@ -46,6 +46,10 @@ define(["require", "exports", "sap/ui/core/mvc/Controller", "sap/ui/core/UICompo
             var oModel = this.getOwnerComponent().getModel("i18n");
             return oModel.getResourceBundle();
         };
+        // public async getTextAsync(key: string): Promise<string> {
+        // 	const bundle = await this.getResourceBundle();
+        // 	return bundle.getText(key);
+        // }
         /**
          * Convenience method for getting the view model by name in every controller of the application.
          * @param [sName] The model name
