@@ -82,7 +82,7 @@
 					"target": "main"
 				},
 				{
-					"pattern": "Create",
+					"pattern": "create",
 					"name": "create",
 					"target": "create"
 				},

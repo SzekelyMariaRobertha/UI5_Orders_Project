@@ -2,6 +2,7 @@ import MessageBox from "sap/m/MessageBox";
 import History from "sap/ui/core/routing/History";
 import UIComponent from "sap/ui/core/UIComponent";
 import BaseController from "./BaseController";
+import ComboBox from "sap/m/ComboBox";
 
 export default class CreateOrder extends BaseController {
 
@@ -20,7 +21,7 @@ export default class CreateOrder extends BaseController {
                     if (sAction === MessageBox.Action.OK) {
                         const oHistory = History.getInstance();
                         const sPreviousHash = oHistory.getPreviousHash();
-    
+
                         if (sPreviousHash !== undefined) {
                             window.history.back();
                         } else {
@@ -32,5 +33,17 @@ export default class CreateOrder extends BaseController {
             }
         );
     }
-    
+
+    public handleChange(oEvent: Event): void {
+        const oComboBox = oEvent.getSource() as ComboBox;
+        const sSelectedKey = oComboBox.getSelectedKey();
+        const sValue = oComboBox.getValue();
+
+        if (!sSelectedKey && sValue) {
+            oComboBox.setValueState(ValueState.Error);
+            oComboBox.setValueStateText("Please enter a valid customer!");
+        } else {
+            oComboBox.setValueState(ValueState.None);
+        }
+    }
 }

@@ -55,22 +55,26 @@ export default class Main extends BaseController {
         const oTable = this.byId("idOrdersTable") as Table;
         const oModel = this.getView().getModel() as ODataModel; // This is ODataModel!
         const aSelectedItems = oTable.getSelectedItems();
-        let sText = this.getResourceBundle().getText("appDescription");
+        const sAtLeastOneEntryText = this.getResourceBundle().getText("atLeastOneEntryText");
+        const sdeleteMessasgeBoxTitle = this.getResourceBundle().getText("deleteMessasgeBoxTitle");
+        const sdeleteConfirmationText = this.getResourceBundle().getText("deleteConfirmationText");
+        const sdeleteSuccessText = this.getResourceBundle().getText("deleteSuccessText");
+        const sdeleteErrorText = this.getResourceBundle().getText("deleteErrorText");
+
  
         if (aSelectedItems.length === 0) {
-            MessageToast.show("Please select at least one order.");
+            MessageToast.show(sAtLeastOneEntryText);
             return;
         }
  
-        MessageBox.confirm("Are you sure you want to delete the selected orders?", {
-            title: "Confirm Deletion",
+        MessageBox.confirm(sdeleteConfirmationText, {
+            title: sdeleteMessasgeBoxTitle,
             actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
             emphasizedAction: MessageBox.Action.OK,
             onClose: (sAction: string) => {
                 if (sAction === MessageBox.Action.OK) {
                     aSelectedItems.forEach(oItem => {
                         const oContext = oItem.getBindingContext();
-                        const oOrder = oContext.getObject();
 						let sPath = oContext.getPath();
 						oModel.setUseBatch(true);
 						// oModel.createKey("/Orders", {OrderID: a} )   #For creare, example for future
@@ -79,10 +83,10 @@ export default class Main extends BaseController {
 					if (oModel.hasPendingChanges()) {
 						oModel.submitChanges({
 							success: (oData) => {
-                                MessageToast.show("Selected orders deleted.");
+                                MessageToast.show(sdeleteSuccessText);
                             },
                             error: (oResponse) => {
-                                MessageToast.show("Delete failed!");
+                                MessageToast.show(sdeleteErrorText);
                             }
 						})
 
