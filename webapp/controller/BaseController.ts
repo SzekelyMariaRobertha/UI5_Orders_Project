@@ -1,11 +1,10 @@
 import Controller from "sap/ui/core/mvc/Controller";
+import History from "sap/ui/core/routing/History";
+import Router from "sap/ui/core/routing/Router";
 import UIComponent from "sap/ui/core/UIComponent";
-import AppComponent from "../Component";
 import Model from "sap/ui/model/Model";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
-import ResourceBundle from "sap/base/i18n/ResourceBundle";
-import Router from "sap/ui/core/routing/Router";
-import History from "sap/ui/core/routing/History";
+import AppComponent from "../Component";
 
 /**
  * @namespace ui5training.controller
@@ -31,10 +30,15 @@ export default abstract class BaseController extends Controller {
 	 * Convenience method for getting the i18n resource bundle of the component.
 	 * @returns The i18n resource bundle of the component
 	 */
-	public getResourceBundle(): ResourceBundle | Promise<ResourceBundle> {
+	public getResourceBundle(): any {
 		const oModel = this.getOwnerComponent().getModel("i18n") as ResourceModel;
 		return oModel.getResourceBundle();
 	}
+
+	// public async getTextAsync(key: string): Promise<string> {
+	// 	const bundle = await this.getResourceBundle();
+	// 	return bundle.getText(key);
+	// }
 
 	/**
 	 * Convenience method for getting the view model by name in every controller of the application.

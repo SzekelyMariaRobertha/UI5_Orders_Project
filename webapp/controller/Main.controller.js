@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "./BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator"], function (require, exports, BaseController_1, Filter_1, FilterOperator_1) {
+define(["require", "exports", "./BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/m/MessageBox", "sap/m/MessageToast"], function (require, exports, BaseController_1, Filter_1, FilterOperator_1, MessageBox_1, MessageToast_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
@@ -26,30 +26,55 @@ define(["require", "exports", "./BaseController", "sap/ui/model/Filter", "sap/ui
         }
         Main.prototype.onInit = function () {
             console.log("Main controller initialized");
-            // Retrieve models from the manifest
-            var oOrderModel = this.getOwnerComponent().getModel("order");
-            var oCustomerModel = this.getOwnerComponent().getModel("customer");
-            // Set models to the view (this will bind them to the XML view automatically)
-            this.getView().setModel(oOrderModel, "order");
-            this.getView().setModel(oCustomerModel, "customer");
         };
         Main.prototype.onSearch = function (oEvent) {
             var sQuery = oEvent.getSource().getValue();
             var aFilters = [];
             if (sQuery && sQuery.length > 0) {
-                aFilters.push(new Filter_1.default("CustomerID", FilterOperator_1.default.Contains, sQuery));
+                aFilters.push(new Filter_1.default("OrderID", FilterOperator_1.default.Contains, sQuery));
             }
             var oTable = this.byId("idOrdersTable");
             var oBinding = oTable.getBinding("items");
-            oBinding.filter(aFilters, "Application");
+            console.log(oBinding.getModel().getProperty("/Orders"));
+            oBinding.filter(aFilters);
         };
-        Main.prototype.onSelectionChange = function (oEvent) {
+        Main.prototype.onCreatePress = function () {
+            this.getRouter().navTo("create");
+        };
+        Main.prototype.onDeletePress = function () {
             var oTable = this.byId("idOrdersTable");
-            var oLabel = this.byId("idFilterLabel");
-            var aContexts = oTable.getSelectedContexts(true); // include contexts even they are not showed
-            var bSelected = aContexts && aContexts.length > 0;
-            var sText = bSelected ? "".concat(aContexts.length, " selected") : "";
-            oLabel.setText(sText);
+            var oModel = this.getView().getModel(); // This is ODataModel!
+            var aSelectedItems = oTable.getSelectedItems();
+            if (aSelectedItems.length === 0) {
+                MessageToast_1.default.show("Please select at least one order.");
+                return;
+            }
+            MessageBox_1.default.confirm("Are you sure you want to delete the selected orders?", {
+                title: "Confirm Deletion",
+                actions: [MessageBox_1.default.Action.OK, MessageBox_1.default.Action.CANCEL],
+                emphasizedAction: MessageBox_1.default.Action.OK,
+                onClose: function (sAction) {
+                    if (sAction === MessageBox_1.default.Action.OK) {
+                        aSelectedItems.forEach(function (oItem) {
+                            var oContext = oItem.getBindingContext();
+                            var oOrder = oContext.getObject();
+                            var sOrderID = typeof oOrder.OrderID === "number"
+                                ? "/Orders(".concat(oOrder.OrderID, ")")
+                                : "/Orders('".concat(oOrder.OrderID, "')");
+                            oModel.remove(sOrderID, {
+                                success: function () {
+                                    MessageToast_1.default.show("Selected orders deleted.");
+                                },
+                                error: function () {
+                                    MessageToast_1.default.show("Delete failed for OrderID: " + oOrder.OrderID);
+                                }
+                            });
+                        });
+                        oTable.removeSelections();
+                        oModel.refresh();
+                    }
+                }
+            });
         };
         return Main;
     }(BaseController_1.default));

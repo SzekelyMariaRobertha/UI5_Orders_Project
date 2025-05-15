@@ -58,16 +58,8 @@
 						"de"
 					],
 					"fallbackLocale": "en",
-					"async": true
+					"async": false
 				}
-			},
-			"order": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/mockdata/Orders.json"
-			},
-			"customer": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/mockdata/Customers.json"
 			},
 			"": {
 				"dataSource": "mainService",
@@ -88,12 +80,30 @@
 					"pattern": "",
 					"name": "main",
 					"target": "main"
+				},
+				{
+					"pattern": "Create",
+					"name": "create",
+					"target": "create"
+				},
+				{
+					"pattern": "{ID}",
+					"name": "details",
+					"target": "details"
 				}
 			],
 			"targets": {
 				"main": {
 					"viewId": "main",
 					"viewName": "Main"
+				},
+				"create": {
+					"viewId": "create",
+					"viewName": "CreateOrder"
+				},
+				"details": {
+					"viewId": "details",
+					"viewName": "OrderDetails"
 				}
 			}
 		},

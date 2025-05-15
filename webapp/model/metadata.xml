@@ -1,401 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx 
-    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" 
-    Version="1.0">
-  <edmx:DataServices 
-      xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-      m:DataServiceVersion="1.0" 
-      m:MaxDataServiceVersion="2.0">
-      
-    <Schema 
-        xmlns="http://schemas.microsoft.com/ado/2009/11/edm" 
-        Namespace="NorthwindModel">
-      
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+  <edmx:DataServices>
+    <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="NorthwindModel">
       <EntityType Name="Category">
-        <Key>
-          <PropertyRef Name="CategoryID"/>
-        </Key>
-        <Property 
-            xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation"
-            Name="CategoryID" 
-            Type="Edm.Int32" 
-            Nullable="false" 
-            p6:StoreGeneratedPattern="Identity"/>
-        <Property 
-            Name="CategoryName" 
-            Type="Edm.String" 
-            Nullable="false" 
-            MaxLength="15" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Description" 
-            Type="Edm.String" 
-            MaxLength="Max" 
-            FixedLength="false" 
-            Unicode="true"/>
+        <Key><PropertyRef Name="CategoryID"/></Key>
+        <Property Name="CategoryID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="CategoryName" Type="Edm.String"/>
+        <Property Name="Description" Type="Edm.String"/>
       </EntityType>
-
       <EntityType Name="Customer">
-        <Key>
-          <PropertyRef Name="CustomerID"/>
-        </Key>
-        <Property 
-            Name="CustomerID" 
-            Type="Edm.String" 
-            Nullable="false" 
-            MaxLength="5" 
-            FixedLength="true" 
-            Unicode="true"/>
-        <Property 
-            Name="CompanyName" 
-            Type="Edm.String" 
-            Nullable="false" 
-            MaxLength="40" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="ContactName" 
-            Type="Edm.String" 
-            MaxLength="30" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="ContactTitle" 
-            Type="Edm.String" 
-            MaxLength="30" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Address" 
-            Type="Edm.String" 
-            MaxLength="60" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="City" 
-            Type="Edm.String" 
-            MaxLength="15" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Region" 
-            Type="Edm.String" 
-            MaxLength="15" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="PostalCode" 
-            Type="Edm.String" 
-            MaxLength="10" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Country" 
-            Type="Edm.String" 
-            MaxLength="15" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Phone" 
-            Type="Edm.String" 
-            MaxLength="24" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Fax" 
-            Type="Edm.String" 
-            MaxLength="24" 
-            FixedLength="false" 
-            Unicode="true"/>
+        <Key><PropertyRef Name="CustomerID"/></Key>
+        <Property Name="CustomerID" Type="Edm.String" Nullable="false"/>
+        <Property Name="CompanyName" Type="Edm.String"/>
+        <Property Name="ContactName" Type="Edm.String"/>
+        <Property Name="ContactTitle" Type="Edm.String"/>
+        <Property Name="Address" Type="Edm.String"/>
+        <Property Name="City" Type="Edm.String"/>
+        <Property Name="Region" Type="Edm.String"/>
+        <Property Name="PostalCode" Type="Edm.String"/>
+        <Property Name="Country" Type="Edm.String"/>
+        <Property Name="Phone" Type="Edm.String"/>
+        <Property Name="Fax" Type="Edm.String"/>
       </EntityType>
-
       <EntityType Name="Order">
-        <Key>
-          <PropertyRef Name="OrderID"/>
-        </Key>
-        <Property 
-            xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation"
-            Name="OrderID" 
-            Type="Edm.Int32" 
-            Nullable="false" 
-            p6:StoreGeneratedPattern="Identity"/>
-        <Property 
-            Name="CustomerID" 
-            Type="Edm.String" 
-            MaxLength="5" 
-            FixedLength="true" 
-            Unicode="true"/>
-        <Property Name="EmployeeID"  Type="Edm.Int32"/>
-        <Property 
-            Name="OrderDate" 
-            Type="Edm.DateTime" 
-            Precision="3"/>
-        <Property 
-            Name="RequiredDate" 
-            Type="Edm.DateTime" 
-            Precision="3"/>
-        <Property 
-            Name="ShippedDate" 
-            Type="Edm.DateTime" 
-            Precision="3"/>
-        <Property Name="ShipVia"     Type="Edm.Int32"/>
-        <Property 
-            Name="Freight" 
-            Type="Edm.Decimal" 
-            Precision="19" 
-            Scale="4"/>
-        <Property 
-            Name="ShipName" 
-            Type="Edm.String" 
-            MaxLength="40" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="ShipAddress" 
-            Type="Edm.String" 
-            MaxLength="60" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="ShipCity" 
-            Type="Edm.String" 
-            MaxLength="15" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="ShipRegion" 
-            Type="Edm.String" 
-            MaxLength="15" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="ShipPostalCode" 
-            Type="Edm.String" 
-            MaxLength="10" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="ShipCountry" 
-            Type="Edm.String" 
-            MaxLength="15" 
-            FixedLength="false" 
-            Unicode="true"/>
-
-        <NavigationProperty 
-            Name="Customer"
-            Relationship="NorthwindModel.FK_Orders_Customers"
-            FromRole="Orders" 
-            ToRole="Customers"/>
-        <NavigationProperty 
-            Name="Employee"
-            Relationship="NorthwindModel.FK_Orders_Employees"
-            FromRole="Orders" 
-            ToRole="Employees"/>
-        <NavigationProperty 
-            Name="Order_Details"
-            Relationship="NorthwindModel.FK_Order_Details_Orders"
-            FromRole="Orders" 
-            ToRole="Order_Details"/>
-        <NavigationProperty 
-            Name="Shipper"
-            Relationship="NorthwindModel.FK_Orders_Shippers"
-            FromRole="Orders" 
-            ToRole="Shippers"/>
+        <Key><PropertyRef Name="OrderID"/></Key>
+        <Property Name="OrderID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="CustomerID" Type="Edm.String"/>
+        <Property Name="OrderDate" Type="Edm.DateTime"/>
+        <Property Name="RequiredDate" Type="Edm.DateTime"/>
+        <Property Name="ShippedDate" Type="Edm.DateTime"/>
+        <Property Name="ShipVia" Type="Edm.Int32"/>
+        <Property Name="Freight" Type="Edm.Decimal"/>
+        <Property Name="ShipName" Type="Edm.String"/>
+        <Property Name="ShipAddress" Type="Edm.String"/>
+        <Property Name="ShipCity" Type="Edm.String"/>
+        <Property Name="ShipRegion" Type="Edm.String"/>
+        <Property Name="ShipPostalCode" Type="Edm.String"/>
+        <Property Name="ShipCountry" Type="Edm.String"/>
       </EntityType>
-
       <EntityType Name="Order_Detail">
         <Key>
           <PropertyRef Name="OrderID"/>
           <PropertyRef Name="ProductID"/>
         </Key>
-        <Property 
-            Name="OrderID" 
-            Type="Edm.Int32" 
-            Nullable="false"/>
-        <Property 
-            Name="ProductID" 
-            Type="Edm.Int32" 
-            Nullable="false"/>
-        <Property 
-            Name="UnitPrice" 
-            Type="Edm.Decimal" 
-            Nullable="false" 
-            Precision="19" 
-            Scale="4"/>
-        <Property 
-            Name="Quantity" 
-            Type="Edm.Int16" 
-            Nullable="false"/>
-        <Property 
-            Name="Discount" 
-            Type="Edm.Single" 
-            Nullable="false"/>
-
-        <NavigationProperty 
-            Name="Order" 
-            Relationship="NorthwindModel.FK_Order_Details_Orders"
-            FromRole="Order_Details" 
-            ToRole="Orders"/>
-        <NavigationProperty 
-            Name="Product" 
-            Relationship="NorthwindModel.FK_Order_Details_Products"
-            FromRole="Order_Details" 
-            ToRole="Products"/>
+        <Property Name="OrderID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="ProductID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="UnitPrice" Type="Edm.Decimal"/>
+        <Property Name="Quantity" Type="Edm.Int16"/>
+        <Property Name="Discount" Type="Edm.Double"/>
       </EntityType>
-
       <EntityType Name="Product">
-        <Key>
-          <PropertyRef Name="ProductID"/>
-        </Key>
-        <Property 
-            xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation"
-            Name="ProductID" 
-            Type="Edm.Int32" 
-            Nullable="false" 
-            p6:StoreGeneratedPattern="Identity"/>
-        <Property 
-            Name="ProductName" 
-            Type="Edm.String" 
-            Nullable="false" 
-            MaxLength="40" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property Name="SupplierID"   Type="Edm.Int32"/>
-        <Property Name="CategoryID"   Type="Edm.Int32"/>
-        <Property 
-            Name="QuantityPerUnit" 
-            Type="Edm.String" 
-            MaxLength="20" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="UnitPrice" 
-            Type="Edm.Decimal" 
-            Precision="19" 
-            Scale="4"/>
+        <Key><PropertyRef Name="ProductID"/></Key>
+        <Property Name="ProductID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="ProductName" Type="Edm.String"/>
+        <Property Name="SupplierID" Type="Edm.Int32"/>
+        <Property Name="CategoryID" Type="Edm.Int32"/>
+        <Property Name="QuantityPerUnit" Type="Edm.String"/>
+        <Property Name="UnitPrice" Type="Edm.Decimal"/>
         <Property Name="UnitsInStock" Type="Edm.Int16"/>
         <Property Name="UnitsOnOrder" Type="Edm.Int16"/>
         <Property Name="ReorderLevel" Type="Edm.Int16"/>
-        <Property 
-            Name="Discontinued" 
-            Type="Edm.Boolean" 
-            Nullable="false"/>
+        <Property Name="Discontinued" Type="Edm.Boolean"/>
       </EntityType>
-
       <EntityType Name="Supplier">
-        <Key>
-          <PropertyRef Name="SupplierID"/>
-        </Key>
-        <Property 
-            xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation"
-            Name="SupplierID" 
-            Type="Edm.Int32" 
-            Nullable="false" 
-            p6:StoreGeneratedPattern="Identity"/>
-        <Property 
-            Name="CompanyName" 
-            Type="Edm.String" 
-            Nullable="false" 
-            MaxLength="40" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="ContactName" 
-            Type="Edm.String" 
-            MaxLength="30" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="ContactTitle" 
-            Type="Edm.String" 
-            MaxLength="30" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Address" 
-            Type="Edm.String" 
-            MaxLength="60" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="City" 
-            Type="Edm.String" 
-            MaxLength="15" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Region" 
-            Type="Edm.String" 
-            MaxLength="15" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="PostalCode" 
-            Type="Edm.String" 
-            MaxLength="10" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Country" 
-            Type="Edm.String" 
-            MaxLength="15" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Phone" 
-            Type="Edm.String" 
-            MaxLength="24" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Fax" 
-            Type="Edm.String" 
-            MaxLength="24" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="HomePage" 
-            Type="Edm.String" 
-            MaxLength="Max" 
-            FixedLength="false"/>
+        <Key><PropertyRef Name="SupplierID"/></Key>
+        <Property Name="SupplierID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="CompanyName" Type="Edm.String"/>
+        <Property Name="ContactName" Type="Edm.String"/>
+        <Property Name="ContactTitle" Type="Edm.String"/>
+        <Property Name="Address" Type="Edm.String"/>
+        <Property Name="City" Type="Edm.String"/>
+        <Property Name="Region" Type="Edm.String"/>
+        <Property Name="PostalCode" Type="Edm.String"/>
+        <Property Name="Country" Type="Edm.String"/>
+        <Property Name="Phone" Type="Edm.String"/>
+        <Property Name="Fax" Type="Edm.String"/>
+        <Property Name="HomePage" Type="Edm.String"/>
       </EntityType>
-
       <EntityType Name="Shipper">
-        <Key>
-          <PropertyRef Name="ShipperID"/>
-        </Key>
-        <Property 
-            xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation"
-            Name="ShipperID" 
-            Type="Edm.Int32" 
-            Nullable="false" 
-            p6:StoreGeneratedPattern="Identity"/>
-        <Property 
-            Name="CompanyName" 
-            Type="Edm.String" 
-            Nullable="false" 
-            MaxLength="40" 
-            FixedLength="false" 
-            Unicode="true"/>
-        <Property 
-            Name="Phone" 
-            Type="Edm.String" 
-            MaxLength="24" 
-            FixedLength="false" 
-            Unicode="true"/>
+        <Key><PropertyRef Name="ShipperID"/></Key>
+        <Property Name="ShipperID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="CompanyName" Type="Edm.String"/>
+        <Property Name="Phone" Type="Edm.String"/>
       </EntityType>
-
-      <EntityContainer Name="Container" m:IsDefaultEntityContainer="true">
-        <EntitySet Name="Categories"      EntityType="NorthwindModel.Category"/>
-        <EntitySet Name="Customers"       EntityType="NorthwindModel.Customer"/>
-        <EntitySet Name="Orders"          EntityType="NorthwindModel.Order"/>
-        <EntitySet Name="Order_Details"   EntityType="NorthwindModel.Order_Detail"/>
-        <EntitySet Name="Products"        EntityType="NorthwindModel.Product"/>
-        <EntitySet Name="Suppliers"       EntityType="NorthwindModel.Supplier"/>
-        <EntitySet Name="Shippers"        EntityType="NorthwindModel.Shipper"/>
+      <EntityContainer Name="Container">
+        <EntitySet Name="Categories" EntityType="NorthwindModel.Category"/>
+        <EntitySet Name="Customers" EntityType="NorthwindModel.Customer"/>
+        <EntitySet Name="Orders" EntityType="NorthwindModel.Order"/>
+        <EntitySet Name="Order_Details" EntityType="NorthwindModel.Order_Detail"/>
+        <EntitySet Name="Products" EntityType="NorthwindModel.Product"/>
+        <EntitySet Name="Suppliers" EntityType="NorthwindModel.Supplier"/>
+        <EntitySet Name="Shippers" EntityType="NorthwindModel.Shipper"/>
       </EntityContainer>
-
     </Schema>
   </edmx:DataServices>
 </edmx:Edmx>

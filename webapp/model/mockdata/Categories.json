@@ -1,56 +1,27 @@
-{
-  "d": {
-    "results": [
-      {
-        "CategoryID": 1,
-        "CategoryName": "Beverages",
-        "Description": "Soft drinks"
-      },
-      {
-        "CategoryID": 2,
-        "CategoryName": "Condiments",
-        "Description": "Sweet and savory sauces"
-      },
-      {
-        "CategoryID": 3,
-        "CategoryName": "Confections",
-        "Description": "Desserts, candies, and sweet breads"
-      },
-      {
-        "CategoryID": 4,
-        "CategoryName": "Dairy Products",
-        "Description": "Cheeses, milk, and other dairy"
-      },
-      {
-        "CategoryID": 5,
-        "CategoryName": "Grains/Cereals",
-        "Description": "Bread, pasta, and cereals"
-      },
-      {
-        "CategoryID": 6,
-        "CategoryName": "Meat/Poultry",
-        "Description": "Prepared and raw meats"
-      },
-      {
-        "CategoryID": 7,
-        "CategoryName": "Produce",
-        "Description": "Fresh fruits and vegetables"
-      },
-      {
-        "CategoryID": 8,
-        "CategoryName": "Seafood",
-        "Description": "Fish, seaweed, and shellfish"
-      },
-      {
-        "CategoryID": 9,
-        "CategoryName": "Bakery",
-        "Description": "Breads, pastries, and baked goods"
-      },
-      {
-        "CategoryID": 10,
-        "CategoryName": "Frozen Foods",
-        "Description": "Frozen meals and desserts"
-      }
-    ]
+[
+  {
+    "CategoryID": 1,
+    "CategoryName": "Category 1",
+    "Description": "Description for category 1"
+  },
+  {
+    "CategoryID": 2,
+    "CategoryName": "Category 2",
+    "Description": "Description for category 2"
+  },
+  {
+    "CategoryID": 3,
+    "CategoryName": "Category 3",
+    "Description": "Description for category 3"
+  },
+  {
+    "CategoryID": 4,
+    "CategoryName": "Category 4",
+    "Description": "Description for category 4"
+  },
+  {
+    "CategoryID": 5,
+    "CategoryName": "Category 5",
+    "Description": "Description for category 5"
   }
-}
+]

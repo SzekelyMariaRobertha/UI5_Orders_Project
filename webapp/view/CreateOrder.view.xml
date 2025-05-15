@@ -1,0 +1,11 @@
+<mvc:View
+	controllerName="ui5training.controller.CreateOrder"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="{i18n>createOrderPageTitle}"
+		class="customPageTitle"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+	</Page>
+</mvc:View>

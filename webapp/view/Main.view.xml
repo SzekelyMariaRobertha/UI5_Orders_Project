@@ -18,12 +18,12 @@
                 <Button
                     text="{i18n>createButtonText}"
                     icon="sap-icon://create"
-                    press="onCreatePress"
+                    press=".onCreatePress"
                 />
                 <Button
                     text="{i18n>deleteButtonText}"
                     icon="sap-icon://delete"
-                    press="onDeletePress"
+                    press=".onDeletePress"
                 />
             </OverflowToolbar>
         </subHeader>
@@ -34,35 +34,73 @@
             width="auto"
             inset="false"
             mode="MultiSelect"
-            items="{order>/d/results}">
+            items="{/Orders}">
 
             <columns>
                 <Column>
-                    <Text text="Order ID" />
+                    <Text text="{i18n>orderIdText}" />
                 </Column>
                 <Column>
-                    <Text text="Order Date" />
+                    <Text text="{i18n>customerNameText}" />
                 </Column>
                 <Column>
-                    <Text text="Customer ID" />
+                    <Text text="{i18n>orderDateText}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>freightText}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>shipperText}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>shipLocationText}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>shippedDateText}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>employeeText}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>requiredDateText}" />
                 </Column>
             </columns>
 
             <items>
-                <ColumnListItem>
+                <ColumnListItem type="Navigation" press=".onOrderPress">
                     <cells>
-                        <Text text="{order>OrderID}" />
+                        <Text text=" {OrderID}" />
+                        <Text text=" {Customer/CompanyName}" />
                         <Text
-                            text="{
-                                path: 'order>OrderDate', 	
-                                type: 'sap.ui.model.type.DateTime', 
+                            text=" {
+                                path: 'OrderDate' ,
+                                type: 'sap.ui.model.type.DateTime' ,
                                 formatOptions: {
-                                pattern: 'HH:mm'
-				            }}" />
-                        <!-- <Text binding='{customer}' text="{customer>CompanyName}" /> -->
+                                style: 'medium'
+                            }}" />
+                        <Text text=" {Freight}" />
+                        <Text text=" {Shipper/CompanyName}" />
+                        <Text text=" {ShipCity}, {ShipCountry}" />
+                        <Text
+                            text=" {
+                                path: 'ShippedDate' ,
+                                type: 'sap.ui.model.type.DateTime' ,
+                                formatOptions: {
+                                style: 'medium'
+                            }}" />
+                        <Text text=" {Employee/LastName}, {Employee/FirstName}" />
+                        <Text
+                            text=" {
+                                path: 'RequiredDate' ,
+                                type: 'sap.ui.model.type.DateTime' ,
+                                formatOptions: {
+                                style: 'medium'
+                             }}" />
                     </cells>
                 </ColumnListItem>
             </items>
         </Table>
+
+
     </Page>
 </mvc:View>

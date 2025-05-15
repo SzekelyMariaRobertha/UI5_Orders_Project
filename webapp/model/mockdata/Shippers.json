@@ -1,21 +1,17 @@
-{
-  "d": {
-    "results": [
-      {
-        "ShipperID": 1,
-        "CompanyName": "Speedy Express",
-        "Phone": "(503) 555-9831"
-      },
-      {
-        "ShipperID": 2,
-        "CompanyName": "United Package",
-        "Phone": "(503) 555-3199"
-      },
-      {
-        "ShipperID": 3,
-        "CompanyName": "Federal Shipping",
-        "Phone": "(503) 555-9931"
-      }
-    ]
+[
+  {
+    "ShipperID": 1,
+    "CompanyName": "Shipper 1",
+    "Phone": "555-0701"
+  },
+  {
+    "ShipperID": 2,
+    "CompanyName": "Shipper 2",
+    "Phone": "555-0702"
+  },
+  {
+    "ShipperID": 3,
+    "CompanyName": "Shipper 3",
+    "Phone": "555-0703"
   }
-}
+]

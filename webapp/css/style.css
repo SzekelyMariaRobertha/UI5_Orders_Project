@@ -6,3 +6,20 @@
 	display: block !important; /* Make it block-level element */
 	margin: 0 auto !important; /* Center it horizontally */
 }
+
+/* Column headers in light blue for dark theme */
+.sapMListTblHeaderCell {
+	background-color: #414c6d !important; /* deep navy blue */
+	color: #1677c2 !important; /* light blue text */
+	font-weight: bold;
+	font-size: 0.95rem;
+	padding: 1rem 0.5rem;
+	border-bottom: 1px solid #3a6a89;
+	text-transform: uppercase;
+}
+
+/* Hover effect on rows */
+.sapMListTblRow:hover {
+	background-color: #494c58 !important; /* dark blue-gray hover */
+	cursor: pointer;
+}
