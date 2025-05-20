@@ -87,14 +87,9 @@
 					"target": "create"
 				},
 				{
-					"pattern": "{ID}",
+					"pattern": "{OrderID}",
 					"name": "details",
 					"target": "details"
-				},
-				{
-					"pattern": "{ID}",
-					"name": "overview",
-					"target": "overview"
 				}
 			],
 			"targets": {

@@ -9,5 +9,17 @@ export default {
 		const oModel = new JSONModel(Device);
 		oModel.setDefaultBindingMode(BindingMode.OneWay);
 		return oModel;
-	}
+	},
+	createViewModel: () => {
+		const oModel = new JSONModel({
+			busy: true,
+			step: 0,
+			customerSelected: false,
+			productsSelected: false,
+			selectedProducts: [],
+			totalAmount : 0
+		});
+		return oModel;
+	},
+
 };

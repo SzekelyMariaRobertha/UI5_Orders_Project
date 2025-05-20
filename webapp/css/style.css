@@ -28,3 +28,9 @@
 	max-height: 5%; /* adjust depending on row height */
 	overflow-y: auto;
 }
+
+.largerLabel {
+	font-size: 1.125rem !important;
+	font-weight: bold !important;
+	color: white !important;
+}

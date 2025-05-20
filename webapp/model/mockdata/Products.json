@@ -7,7 +7,7 @@
     "QuantityPerUnit": "25 units per box",
     "UnitPrice": "24.99",
     "UnitsInStock": "45",
-    "UnitsOnOrder": "60",
+    "UnitsOnOrder": "20",
     "ReorderLevel": "10",
     "Discontinued": "False",
     "Category": {
@@ -38,7 +38,7 @@
     "QuantityPerUnit": "100 bags per box",
     "UnitPrice": "15.49",
     "UnitsInStock": "150",
-    "UnitsOnOrder": "100",
+    "UnitsOnOrder": "75",
     "ReorderLevel": "50",
     "Discontinued": "False",
     "Category": {
@@ -69,7 +69,7 @@
     "QuantityPerUnit": "10 units per box",
     "UnitPrice": "79.99",
     "UnitsInStock": "70",
-    "UnitsOnOrder": "90",
+    "UnitsOnOrder": "30",
     "ReorderLevel": "20",
     "Discontinued": "False",
     "Category": {
@@ -100,7 +100,7 @@
     "QuantityPerUnit": "12 bottles per carton",
     "UnitPrice": "19.95",
     "UnitsInStock": "85",
-    "UnitsOnOrder": "30",
+    "UnitsOnOrder": "40",
     "ReorderLevel": "25",
     "Discontinued": "False",
     "Category": {
@@ -131,7 +131,7 @@
     "QuantityPerUnit": "24 mugs per carton",
     "UnitPrice": "7.75",
     "UnitsInStock": "120",
-    "UnitsOnOrder": "150",
+    "UnitsOnOrder": "60",
     "ReorderLevel": "10",
     "Discontinued": "False",
     "Category": {
@@ -162,7 +162,7 @@
     "QuantityPerUnit": "5 units per box",
     "UnitPrice": "34.99",
     "UnitsInStock": "65",
-    "UnitsOnOrder": "80",
+    "UnitsOnOrder": "25",
     "ReorderLevel": "15",
     "Discontinued": "False",
     "Category": {
@@ -224,7 +224,7 @@
     "QuantityPerUnit": "6 jars per carton",
     "UnitPrice": "12.6",
     "UnitsInStock": "80",
-    "UnitsOnOrder": "15",
+    "UnitsOnOrder": "30",
     "ReorderLevel": "5",
     "Discontinued": "False",
     "Category": {
@@ -255,7 +255,7 @@
     "QuantityPerUnit": "15 units per box",
     "UnitPrice": "29.99",
     "UnitsInStock": "40",
-    "UnitsOnOrder": "25",
+    "UnitsOnOrder": "15",
     "ReorderLevel": "8",
     "Discontinued": "False",
     "Category": {
@@ -286,7 +286,7 @@
     "QuantityPerUnit": "12 bottles per box",
     "UnitPrice": "9.99",
     "UnitsInStock": "90",
-    "UnitsOnOrder": "40",
+    "UnitsOnOrder": "25",
     "ReorderLevel": "20",
     "Discontinued": "False",
     "Category": {
@@ -317,7 +317,7 @@
     "QuantityPerUnit": "1 desk per shipment",
     "UnitPrice": "199.99",
     "UnitsInStock": "20",
-    "UnitsOnOrder": "15",
+    "UnitsOnOrder": "5",
     "ReorderLevel": "5",
     "Discontinued": "False",
     "Category": {
@@ -348,7 +348,7 @@
     "QuantityPerUnit": "1 chair per shipment",
     "UnitPrice": "149.99",
     "UnitsInStock": "50",
-    "UnitsOnOrder": "40",
+    "UnitsOnOrder": "20",
     "ReorderLevel": "10",
     "Discontinued": "False",
     "Category": {

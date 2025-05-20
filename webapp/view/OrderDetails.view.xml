@@ -1,10 +1,110 @@
 <mvc:View
     controllerName="ui5training.controller.OrderDetails"
     xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
     <Page
         title="{i18n>orderDetailPageTitle}"
-        class="customPageTitle">
+        class="customPageTitle"
+        titleLevel="H2"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <VBox class="sapUiSmallMargin">
+            <ObjectHeader
+                title="Order #{OrderID}"
+                number="{orderDetailsModel>/orderTotal}"
+                numberUnit="$"
+                responsive="true"
+                class="sapUiResponsivePadding--header"
+            >
+                <attributes>
+                    <ObjectAttribute
+                        title="{i18n>employeeLabel}"
+                        text="{Employee/FirstName} {Employee/LastName}"
+                    />
+                    <ObjectAttribute
+                        title="{i18n>companyName}"
+                        text="{Customer/CompanyName}"
+                    />
+                    <ObjectAttribute
+                        title="{i18n>shipper}"
+                        text="{Shipper/CompanyName}"
+                    />
+                    <ObjectAttribute
+                        title="{i18n>shipName}"
+                        text="{ShipName}"
+                    />
+                    <ObjectAttribute
+                        title="{i18n>shipAddress}"
+                        text="{ShipAddress}, {ShipCity}, {ShipCountry}"
+                    />
+                </attributes>
+            </ObjectHeader>
 
+            <Label text="Products"
+                class="largerLabel sapUiMediumMarginTop sapUiTinyMarginBottom sapUiTinyMarginBegin" />
+
+            <ScrollContainer height="35rem" horizontal="false" vertical="true">
+                <Table
+                    id="idOrderDetailsTable"
+                    items="{
+                        path: 'orderDetailsModel>/items',
+                        sorter: {
+                            path: 'Product/Category/CategoryName',
+                            group: true
+                        }
+                    }"
+                    inset="false"
+                    class="sapUiResponsiveMargin"
+                    width="auto"
+                    alternateRowColors="true"
+                    sticky="ColumnHeaders"
+                >
+                    <columns>
+                        <Column>
+                            <Text text="{i18n>productNameText}" />
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>supplierText}" />
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>quantityText}" />
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>unitPriceText}" />
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>totalPriceText}" />
+                            <footer>
+                                <ObjectNumber
+                                    number="{orderDetailsModel>/orderTotal}"
+                                    unit="$"
+                                    state="Success"
+                                />
+                            </footer>
+                        </Column>
+                    </columns>
+
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{orderDetailsModel>Product/ProductName}" />
+                                <Text
+                                    text="{orderDetailsModel>Product/Supplier/CompanyName} ({orderDetailsModel>Product/Supplier/Country})" />
+                                <Text text="{orderDetailsModel>Quantity}" />
+                                <Text text="{orderDetailsModel>UnitPrice}" />
+                                <Text text="{orderDetailsModel>TotalAmount} $" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </ScrollContainer>
+
+        </VBox>
     </Page>
+
 </mvc:View>

@@ -26,21 +26,21 @@ export default class Main extends BaseController {
         const oTable = this.byId("idOrdersTable") as Table;
         const oBinding = oTable.getBinding("items") as ListBinding;
 
-        let oMultiFilter: Filter = new Filter({
-            filters: []
-        })
-
         // Since we have OrderID as number, we cannot filter on it
         // If we want to filter on it, we need to convert it to string in json file, but if we do that we wont be able to delete the entrie
         // Conclusion: we cannot filter on OrderID, we will filter on the other fields
         if (sQuery && sQuery.length > 0) {
-            // oMultiFilter.aFilters.push(new Filter("Customer/CompanyName", FilterOperator.Contains, sQuery));
-            // oMultiFilter.aFilters.push(new Filter("Freight", FilterOperator.Contains, sQuery));
-            // oMultiFilter.aFilters.push(new Filter("Shipper/CompanyName", FilterOperator.Contains, sQuery));
-            // oMultiFilter.aFilters.push(new Filter("ShipCity", FilterOperator.Contains, sQuery));
-            // oMultiFilter.aFilters.push(new Filter("ShipCountry", FilterOperator.Contains, sQuery));
-            // oMultiFilter.aFilters.push(new Filter("Employee/LastName", FilterOperator.Contains, sQuery));
-            // oMultiFilter.aFilters.push(new Filter("Employee/FirstName", FilterOperator.Contains, sQuery));
+            let oMultiFilter: Filter = new Filter({
+                filters: [
+                    new Filter("Customer/CompanyName", FilterOperator.Contains, sQuery),
+                    new Filter("Freight", FilterOperator.Contains, sQuery),
+                    new Filter("Shipper/CompanyName", FilterOperator.Contains, sQuery),
+                    new Filter("ShipCity", FilterOperator.Contains, sQuery),
+                    new Filter("ShipCountry", FilterOperator.Contains, sQuery),
+                    new Filter("Employee/LastName", FilterOperator.Contains, sQuery),
+                    new Filter("Employee/FirstName", FilterOperator.Contains, sQuery)
+                ]
+            });
             oBinding.filter(oMultiFilter);
         } else {
             oBinding.filter([]);
@@ -80,16 +80,16 @@ export default class Main extends BaseController {
                         // oModel.createKey("/Orders", {OrderID: a} )   #For creare, example for future
                         oModel.remove(sPath);
                     });
-                    // if (oModel.hasPendingChanges()) {
-                    //     oModel.submitChanges({
-                    //         success: (oData) => {
-                    //             MessageToast.show(sdeleteSuccessText);
-                    //         },
-                    //         error: (oResponse) => {
-                    //             MessageToast.show(sdeleteErrorText);
-                    //         }
-                    //     })
-                    // }
+                    if (oModel.hasPendingChanges()) {
+                        oModel.submitChanges({
+                            success: (oData: any) => {
+                                MessageToast.show(sdeleteSuccessText);
+                            },
+                            error: (oResponse: any) => {
+                                MessageToast.show(sdeleteErrorText);
+                            }
+                        })
+                    }
                     oTable.removeSelections();
                     oModel.refresh();
                 }
@@ -105,10 +105,10 @@ export default class Main extends BaseController {
 
     public onOrderPress(oEvent: Event): void {
         let oItem = (oEvent.getSource() as ColumnListItem).getBindingContext();
-        let oOrder = oItem.getObject();
-        // let sID = oOrder.OrderID;
-        // this.getRouter().navTo("details", {
-        //     ID: sID
-        // });
+        let oOrder: any = oItem.getObject();
+        let sID = String(oOrder.OrderID);
+        this.getRouter().navTo("details", {
+            OrderID: sID
+        });
     }
 }

@@ -32,6 +32,7 @@ define(["require", "exports", "sap/ui/core/UIComponent", "./model/models", "sap/
             _super.prototype.init.call(this);
             // create the device model
             this.setModel(models_1.default.createDeviceModel(), "device");
+            this.setModel(models_1.default.createViewModel(), "viewModel");
             // create the views based on the url/hash
             this.getRouter().initialize();
         };

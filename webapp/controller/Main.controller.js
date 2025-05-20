@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-define(["require", "exports", "sap/m/MessageBox", "sap/m/MessageToast", "sap/ui/model/Filter", "./BaseController", "sap/m/GroupHeaderListItem"], function (require, exports, MessageBox_1, MessageToast_1, Filter_1, BaseController_1, GroupHeaderListItem_1) {
+define(["require", "exports", "sap/m/MessageBox", "sap/m/MessageToast", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "./BaseController", "sap/m/GroupHeaderListItem"], function (require, exports, MessageBox_1, MessageToast_1, Filter_1, FilterOperator_1, BaseController_1, GroupHeaderListItem_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
@@ -37,20 +37,21 @@ define(["require", "exports", "sap/m/MessageBox", "sap/m/MessageToast", "sap/ui/
             var sQuery = oEvent.getSource().getValue();
             var oTable = this.byId("idOrdersTable");
             var oBinding = oTable.getBinding("items");
-            var oMultiFilter = new Filter_1.default({
-                filters: []
-            });
             // Since we have OrderID as number, we cannot filter on it
             // If we want to filter on it, we need to convert it to string in json file, but if we do that we wont be able to delete the entrie
             // Conclusion: we cannot filter on OrderID, we will filter on the other fields
             if (sQuery && sQuery.length > 0) {
-                // oMultiFilter.aFilters.push(new Filter("Customer/CompanyName", FilterOperator.Contains, sQuery));
-                // oMultiFilter.aFilters.push(new Filter("Freight", FilterOperator.Contains, sQuery));
-                // oMultiFilter.aFilters.push(new Filter("Shipper/CompanyName", FilterOperator.Contains, sQuery));
-                // oMultiFilter.aFilters.push(new Filter("ShipCity", FilterOperator.Contains, sQuery));
-                // oMultiFilter.aFilters.push(new Filter("ShipCountry", FilterOperator.Contains, sQuery));
-                // oMultiFilter.aFilters.push(new Filter("Employee/LastName", FilterOperator.Contains, sQuery));
-                // oMultiFilter.aFilters.push(new Filter("Employee/FirstName", FilterOperator.Contains, sQuery));
+                var oMultiFilter = new Filter_1.default({
+                    filters: [
+                        new Filter_1.default("Customer/CompanyName", FilterOperator_1.default.Contains, sQuery),
+                        new Filter_1.default("Freight", FilterOperator_1.default.Contains, sQuery),
+                        new Filter_1.default("Shipper/CompanyName", FilterOperator_1.default.Contains, sQuery),
+                        new Filter_1.default("ShipCity", FilterOperator_1.default.Contains, sQuery),
+                        new Filter_1.default("ShipCountry", FilterOperator_1.default.Contains, sQuery),
+                        new Filter_1.default("Employee/LastName", FilterOperator_1.default.Contains, sQuery),
+                        new Filter_1.default("Employee/FirstName", FilterOperator_1.default.Contains, sQuery)
+                    ]
+                });
                 oBinding.filter(oMultiFilter);
             }
             else {
@@ -86,16 +87,16 @@ define(["require", "exports", "sap/m/MessageBox", "sap/m/MessageToast", "sap/ui/
                             // oModel.createKey("/Orders", {OrderID: a} )   #For creare, example for future
                             oModel.remove(sPath);
                         });
-                        // if (oModel.hasPendingChanges()) {
-                        //     oModel.submitChanges({
-                        //         success: (oData) => {
-                        //             MessageToast.show(sdeleteSuccessText);
-                        //         },
-                        //         error: (oResponse) => {
-                        //             MessageToast.show(sdeleteErrorText);
-                        //         }
-                        //     })
-                        // }
+                        if (oModel.hasPendingChanges()) {
+                            oModel.submitChanges({
+                                success: function (oData) {
+                                    MessageToast_1.default.show(sdeleteSuccessText);
+                                },
+                                error: function (oResponse) {
+                                    MessageToast_1.default.show(sdeleteErrorText);
+                                }
+                            });
+                        }
                         oTable.removeSelections();
                         oModel.refresh();
                     }
@@ -105,10 +106,10 @@ define(["require", "exports", "sap/m/MessageBox", "sap/m/MessageToast", "sap/ui/
         Main.prototype.onOrderPress = function (oEvent) {
             var oItem = oEvent.getSource().getBindingContext();
             var oOrder = oItem.getObject();
-            // let sID = oOrder.OrderID;
-            // this.getRouter().navTo("details", {
-            //     ID: sID
-            // });
+            var sID = String(oOrder.OrderID);
+            this.getRouter().navTo("details", {
+                OrderID: sID
+            });
         };
         return Main;
     }(BaseController_1.default));

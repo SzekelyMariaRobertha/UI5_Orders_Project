@@ -40,8 +40,7 @@
                     path: '/Orders',
                     sorter: {
                         path: 'Customer/CompanyName',
-                        group: true,
-                        groupHeaderFactory: '.getGroupHeader'
+                        group: true
                         }
                   }">
 
